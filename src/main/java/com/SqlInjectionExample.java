@@ -12,6 +12,8 @@ public class SqlInjectionExample {
     public void doLogin(String user, String pass) {
         Connection conn = null;
         Statement stmt = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=myuser&password=mypass");
 
